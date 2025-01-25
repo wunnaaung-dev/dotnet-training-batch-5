@@ -1,0 +1,53 @@
+﻿@model ApexAreaChartModel
+
+@{
+    string Title = Model.Title;
+    string XAxisDataType = Model.XAxisType;
+    var Series = Model.Series;
+    var Categories = Model.Categories;
+}
+
+<div id="chart"></div>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        var options = {
+            series: @Html.Raw(Json.Serialize(Series)),
+            chart: {
+                type: 'area',
+                height: 350
+            },
+            title: {
+                text: '@Title',
+                align: 'center'
+            },
+            xaxis: {
+                type: '@XAxisDataType',
+                categories: @Html.Raw(Json.Serialize(Categories))
+                    },
+            dataLabels: {
+                enabled: false
+            },
+            stroke: {
+                curve: 'smooth'
+            },
+            fill: {
+                type: 'gradient',
+                gradient: {
+                    shadeIntensity: 1,
+                    opacityFrom: 0.7,
+                    opacityTo: 0.9,
+                    stops: [0, 90, 100]
+                }
+            },
+            tooltip: {
+                x: {
+                    format: 'yyyy-MM-dd'
+                }
+            }
+        };
+
+        var chart = new ApexCharts(document.querySelector("#chart"), options);
+        chart.render();
+    });
+</script>

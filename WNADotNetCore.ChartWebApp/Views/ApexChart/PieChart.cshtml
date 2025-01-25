@@ -1,0 +1,49 @@
+﻿@model ApexPieChartModel
+
+@{
+    var seriesData = Model.Series;
+
+    var labelsData = Model.Labels;
+
+    var chartTitle = Model.Title;
+}
+
+<h2>@chartTitle</h2>
+
+<div id="chart"></div>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        var options = {
+            series: @Html.Raw(Json.Serialize(seriesData)),
+            chart: {
+                width: 380,
+                type: 'pie'
+            },
+            title: {
+                text: '@chartTitle',
+                align: 'center',
+                style: {
+                    fontSize: '20px',
+                    fontWeight: 'bold',
+                    color: '#333'
+                }
+            },
+            labels: @Html.Raw(Json.Serialize(labelsData)),
+            responsive: [{
+                breakpoint: 480,
+                options: {
+                    chart: {
+                        width: 250
+                    },
+                    legend: {
+                        position: 'bottom'
+                    }
+                }
+            }]
+        };
+
+        var chart = new ApexCharts(document.querySelector("#chart"), options);
+        chart.render();
+    });
+</script>

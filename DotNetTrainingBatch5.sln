@@ -40,11 +40,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "PointOfSale", "PointOfSale"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Console", "Console", "{19A6C02B-62F4-4795-995A-E8A387415665}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WNADotNetCore.SnakeLadderGame.Database", "WNADotNetCore.SnakeLadderGame.Database\WNADotNetCore.SnakeLadderGame.Database.csproj", "{9A695625-C2A3-4D96-8FA9-F2BD06B15FEB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WNADotNetCore.SnakeLadderGame.Database", "WNADotNetCore.SnakeLadderGame.Database\WNADotNetCore.SnakeLadderGame.Database.csproj", "{9A695625-C2A3-4D96-8FA9-F2BD06B15FEB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WNADotNetCore.SnakeLadderGame.Domain", "WNADotNetCore.SnakeLadderGame.Domain\WNADotNetCore.SnakeLadderGame.Domain.csproj", "{ADEDBA86-A8F2-4DF0-9009-9A00486CB8F1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WNADotNetCore.SnakeLadderGame.Domain", "WNADotNetCore.SnakeLadderGame.Domain\WNADotNetCore.SnakeLadderGame.Domain.csproj", "{ADEDBA86-A8F2-4DF0-9009-9A00486CB8F1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WNADotNetCore.SnakeLadderGame.REST_API", "WNADotNetCore.SnakeLadderGame.REST_API\WNADotNetCore.SnakeLadderGame.REST_API.csproj", "{06C5201E-1C68-4819-84C3-08F4D828ABFE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WNADotNetCore.SnakeLadderGame.REST_API", "WNADotNetCore.SnakeLadderGame.REST_API\WNADotNetCore.SnakeLadderGame.REST_API.csproj", "{06C5201E-1C68-4819-84C3-08F4D828ABFE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WNADotNetCore.ChartWebApp", "WNADotNetCore.ChartWebApp\WNADotNetCore.ChartWebApp.csproj", "{899D0C0D-F03D-4CE2-A125-BB06140E3176}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -120,6 +122,10 @@ Global
 		{06C5201E-1C68-4819-84C3-08F4D828ABFE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{06C5201E-1C68-4819-84C3-08F4D828ABFE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{06C5201E-1C68-4819-84C3-08F4D828ABFE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{899D0C0D-F03D-4CE2-A125-BB06140E3176}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{899D0C0D-F03D-4CE2-A125-BB06140E3176}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{899D0C0D-F03D-4CE2-A125-BB06140E3176}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{899D0C0D-F03D-4CE2-A125-BB06140E3176}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

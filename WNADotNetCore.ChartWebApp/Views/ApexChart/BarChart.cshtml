@@ -1,0 +1,47 @@
+﻿@model ApexBarChartModel
+
+@{
+    string title = Model.Title;
+    var dataValues = Model.Data;
+    var categories = Model.Categories;
+}
+
+<div id="barChart"></div>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        var options = {
+            series: [{
+                data: @Html.Raw(Json.Serialize(dataValues))
+                    }],
+            chart: {
+                type: 'bar',
+                height: 350
+            },
+            plotOptions: {
+                bar: {
+                    borderRadius: 4,
+                    borderRadiusApplication: 'end',
+                    horizontal: true
+                }
+            },
+            dataLabels: {
+                enabled: false
+            },
+            xaxis: {
+                categories: @Html.Raw(Json.Serialize(categories))
+                    },
+            colors: ['#008FFB'],
+            tooltip: {
+                y: {
+                    formatter: function (val) {
+                        return val + " Units";
+                    }
+                }
+            }
+        };
+
+        var chart = new ApexCharts(document.querySelector("#barChart"), options);
+        chart.render();
+    });
+</script>

@@ -1,0 +1,70 @@
+﻿@model ApexDistributedChartModel
+
+@{
+    var dataValues = Model.Data;
+    var categories = Model.Categories;
+    var colors = Model.Colors;
+    var title = "Employee Performance by Department"; 
+}
+
+<div id="chart"></div>
+
+<script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        var colors = @Html.Raw(Json.Serialize(colors));
+
+        var options = {
+            series: [{
+                data: @Html.Raw(Json.Serialize(dataValues))
+                }],
+            chart: {
+                height: 400,
+                type: 'bar',
+                events: {
+                    click: function (chart, w, e) {
+                        console.log(chart, w, e);
+                    }
+                }
+            },
+            title: {
+                text: '@title',
+                align: 'center',
+                style: {
+                    fontSize: '20px',
+                    fontWeight: 'bold',
+                    color: '#333'
+                }
+            },
+            colors: colors,
+            plotOptions: {
+                bar: {
+                    columnWidth: '45%',
+                    distributed: true
+                }
+            },
+            dataLabels: {
+                enabled: true,
+                style: {
+                    colors: ['#fff']
+                }
+            },
+            legend: {
+                show: true
+            },
+            xaxis: {
+                categories: @Html.Raw(Json.Serialize(categories)),
+                labels: {
+                    style: {
+                        colors: colors,
+                        fontSize: '12px'
+                    }
+                }
+            }
+        };
+
+        var chart = new ApexCharts(document.querySelector("#chart"), options);
+        chart.render();
+    });
+</script>
